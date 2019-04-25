@@ -1,6 +1,6 @@
 # Cinemapp
 
-Cinema application with Symfony 4 flex (basic bootstrap front-end design)
+Cinema management application with Symfony 4 flex (basic bootstrap front-end design)
 
 ## Requirements 
 *   [MySQL](https://www.mysql.com/fr/)
