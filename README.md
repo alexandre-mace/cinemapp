@@ -31,7 +31,7 @@ DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name"
 
 *   Get tables 
 
-		$ php bin/console doctrine:make:migration
+		$ php bin/console make:migration
 		$ php bin/console doctrine:migrations:migrate
 
 *   Get data
