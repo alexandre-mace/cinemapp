@@ -1,0 +1,41 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Movie list{% endblock %}
+
+{% block content %}
+    <h1>Movie list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Synopsis</th>
+                <th>Duration</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for movie in movies %}
+            <tr>
+                <td>{{ movie.id }}</td>
+                <td>{{ movie.title }}</td>
+                <td>{{ movie.synopsis }}</td>
+                <td>{{ movie.duration }}</td>
+                <td><img src="{{ asset('uploads/images/' ~ movie.image.fileName) }}"></td>
+                <td>
+                    <a href="{{ path('admin_movie_show', {'id': movie.id}) }}" class="btn btn-dark color-white">show</a>
+                    <a href="{{ path('admin_movie_edit', {'id': movie.id}) }}" class="btn btn-info color-white">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_movie_new') }}"class="btn btn-success color-white" >Create new</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Session list{% endblock %}
+
+{% block content %}
+    <h1>Session list</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Movie</th>
+                <th>Remaining seats</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+                <td>{{ session.id }}</td>
+                <td>{{ session.date ? session.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ session.movie.title }}</td>
+                <td>{{ session.remainingSeats }}</td>
+                <td>
+                    <a href="{{ path('admin_session_show', {'id': session.id}) }}" class="btn btn-dark color-white">show</a>
+                    <a href="{{ path('admin_session_edit', {'id': session.id}) }}" class="btn btn-info color-white">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_session_new') }}" class="btn btn-success color-white" >Create new</a>
+{% endblock %}

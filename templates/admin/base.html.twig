@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block navigation %}
+    <header>
+        <nav class="container mb-5 mt-5">
+            <ul class="row">
+                <li class="col d-flex justify-content-center">
+                    <a href="{{ path('admin_movie_list') }}">movies</a>
+                </li>
+                <li class="col d-flex justify-content-center">
+                    <a href="{{ path('admin_session_list') }}">sessions</a>
+                </li>
+                <li class="col d-flex justify-content-center">
+                    <a href="{{ path('admin_room_list') }}">rooms</a>
+                </li>
+                <li class="col d-flex justify-content-center">
+                    <a href="{{ path('admin_user_list') }}">users</a>
+                </li>
+                <li class="col d-flex justify-content-center">
+                    <a class="btn btn-danger color-white" href="{{ path('app_logout') }}">log out</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+{% endblock %}
+{% block body %}
+    <main class="container">
+        <section class="row">
+            <div class="col">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </section>
+    </main>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block title %}Edit Session{% endblock %}
+
+{% block content %}
+    <h1>Edit Session</h1>
+
+    {{ include('admin/session/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('admin_session_list') }}" class="btn btn-secondary color-white">back to list</a>
+
+    {{ include('admin/session/_delete_form.html.twig') }}
+{% endblock %}
