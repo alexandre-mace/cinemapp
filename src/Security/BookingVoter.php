@@ -12,7 +12,6 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 class BookingVoter extends Voter
 {
     const SHOW = 'show';
-    const EDIT = 'edit';
     const DELETE = 'delete';
     private $authChecker;
 
@@ -24,7 +23,7 @@ class BookingVoter extends Voter
     protected function supports($attribute, $subject)
     {
         // if the attribute isn't one we support, return false
-        if (!in_array($attribute, [self::SHOW, self::EDIT, self::DELETE])) {
+        if (!in_array($attribute, [self::SHOW,  self::DELETE])) {
             return false;
         }
 
@@ -49,7 +48,6 @@ class BookingVoter extends Voter
 
         switch ($attribute) {
             case self::SHOW:
-            case self::EDIT:
             case self::DELETE:
                 return $this->hasRight($booking, $user);
         }
