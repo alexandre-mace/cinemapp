@@ -1,0 +1,24 @@
+{% extends 'client/base.html.twig' %}
+
+{% block title %}Booking{% endblock %}
+
+{% block content %}
+    <h1>Congratulation for your Booking</h1>
+
+    <a href="{{ path('client_booking_list') }}" class="btn btn-secondary color-white my-3">Go to my booking list</a><br>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>session</th>
+            <th>seats</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ booking.session }}</td>
+            <td>{{ booking.seats }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

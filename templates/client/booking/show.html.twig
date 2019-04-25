@@ -1,0 +1,26 @@
+{% extends 'client/base.html.twig' %}
+
+{% block title %}Booking{% endblock %}
+
+{% block content %}
+    <h1>Booking</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>session</th>
+            <th>seats</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ booking.session }}</td>
+                <td>{{ booking.seats }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('client_booking_list') }}" class="btn btn-secondary color-white mt-1">back to list</a>
+
+    {{ include('client/booking/_delete_form.html.twig') }}
+{% endblock %}

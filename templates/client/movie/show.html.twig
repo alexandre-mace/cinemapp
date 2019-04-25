@@ -1,0 +1,18 @@
+{% extends 'client/base.html.twig' %}
+
+{% block content %}
+<section class="row">
+        <div class="col">
+            <a href="{{ path('client_movie_list') }}" class="btn btn-secondary color-white my-3">back to list</a><br>
+            <img src="{{ asset('uploads/images/' ~ movie.image.fileName) }}">
+            <h1>{{ movie.title }}</h1>
+            <p>{{ movie.synopsis }}</p>
+            <p>{{ movie.duration }} mn</p>
+            <p>Sessions :</p>
+            {% for session in movie.sessions %}
+                <p>{{ session.date|date("m/d/Y H:i") }}</p>
+            {% endfor %}
+            <p></p>
+        </div>
+</section>
+{% endblock %}
