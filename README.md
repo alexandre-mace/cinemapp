@@ -1,5 +1,6 @@
 # Cinemapp
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3576e6821ba64f788d40b74582fbec76)](https://app.codacy.com/app/codacy_alexandre-mace/cinemapp?utm_source=github.com&utm_medium=referral&utm_content=alexandre-mace/cinemapp&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/3576e6821ba64f788d40b74582fbec76)](https://app.codacy.com/app/codacy_alexandre-mace/cinemapp?utm_source=github.com&utm_medium=referral&utm_content=alexandre-mace/cinemapp&utm_campaign=Badge_Grade_Dashboard)
 
 Cinema management application with Symfony 4 flex (basic bootstrap front-end design)
