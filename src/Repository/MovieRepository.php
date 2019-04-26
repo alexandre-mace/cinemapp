@@ -21,18 +21,18 @@ class MovieRepository extends ServiceEntityRepository
 
     public function getFilteredMovies($formData)
     {
-        $qb =  $this->createQueryBuilder('movie')
+        $queryBuilder =  $this->createQueryBuilder('movie')
         ;
         if (!empty($formData['filterByAvailability'])){
-            $qb
+            $queryBuilder
                 ->addSelect('session')
                 ->join('movie.sessions', 'session');
         }
         if (!empty($formData['name'])){
-            $qb->andWhere("movie.title LIKE :name")
+            $queryBuilder->andWhere("movie.title LIKE :name")
                 ->setParameter('name', '%'.$formData['name'].'%');
         }
-        return $qb->getQuery()->getResult();
+        return $queryBuilder->getQuery()->getResult();
     }
     // /**
     //  * @return Movie[] Returns an array of Movie objects
